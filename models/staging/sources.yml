@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw_data
+    description: "Raw data sources for NYC taxi data rides"
+    database: AwsDataCatalog
+    schema: demo_dataset_db
+    tables:
+        - name: green_tripdata
+        - name: yellow_tripdata
+
