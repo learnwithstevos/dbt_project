@@ -26,5 +26,5 @@ cast(nullif(cast(total_amount as varchar), '') as double) as total_amount,
 cast(nullif(cast(payment_type as varchar), '') as integer) as payment_type,
 cast(nullif(cast(congestion_surcharge as varchar), '') as double) as congestion_surcharge
 
-from {{source('raw_data', 'yellow_tripdata')}}
+from {{source('staging', 'yellow_tripdata')}}
 where vendorid is not null

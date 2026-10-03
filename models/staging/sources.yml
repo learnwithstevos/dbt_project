@@ -1,11 +1,18 @@
 version: 2
 
 sources:
-  - name: raw_data
-    description: "Raw data sources for NYC taxi data rides"
+  - name: staging
+    description: >
+      Raw NYC taxi trip data loaded from BigQuery external tables.
+      Contains both yellow and green taxi trip records for 2019-2020.
     database: AwsDataCatalog
     schema: demo_dataset_db
-    tables:
-        - name: green_tripdata
-        - name: yellow_tripdata
 
+    tables:
+      - name: green_tripdata
+        description: >
+          Green taxi trip records. Green taxis operate primarily in
+          outer boroughs (outside Manhattan).
+
+      - name: yellow_tripdata
+        description: Yellow taxi trips, primarily from Manhattan
